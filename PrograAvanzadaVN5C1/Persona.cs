@@ -25,7 +25,7 @@ namespace PrograAvanzadaVN5C1
         private string _apellido;
         private int _edad;
 
-        /* Porperties prop => propiedades */
+        /* Properties prop => propiedades */
         public string Rut { get; set; }
         public string Name => $"{_name} {_apellido}";
         public int Edad {
