@@ -14,7 +14,6 @@ namespace SistemaWeb.Controllers
 
         //PETICION GET
         public IActionResult AddPersona() { return View(); }
-
         public IActionResult ListaPersonas() { return View(_context.Personas.ToList());} 
         
 
