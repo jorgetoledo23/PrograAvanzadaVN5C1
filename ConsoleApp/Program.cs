@@ -1,37 +1,33 @@
 ﻿using ConsoleApp.Model;
 
-Console.WriteLine("Hello, World!");
-
-int i;
-int j = 10; //Asignacion
-string Name = "Jorge";
-bool Bandera = false; // true
-double PI = Math.PI;
-char Caracter = 'a';
-
-var Caracter2 = 'b';
-var PI2 = Math.PI;
-
-string[] paises = new string[10];
-paises[0] = "Chile";
-
-List<string> paises2 = new List<string>();
-paises2.Add("Chile");
-paises2.ForEach(pais =>
+Persona Persona = new Persona()
 {
-    Console.WriteLine(pais);
-});
-
-if (paises2.Contains("Chile"))
+    Id = 1,
+    Name = "Juan",
+    LastName = "Perez"
+};
+Vendedor Vendedor = new Vendedor()
 {
-    //Hacer Algo
-}
-string? paisBuscado = paises2.Find(pais => pais.Equals("Bolivia"));
-//paisBuscado = null;
+    Id = 2,
+    Name = "Andrea",
+    LastName = "Gonzalez",
+    CodigoVendedor = 12341234
+};
+Reponedor Reponedor = new Reponedor()
+{
+    Id = 3,
+    Name = "Julia",
+    LastName = "Amestica",
+    NumeroCredencial = 234567812
+};
+Contratista Contratista = new Contratista()
+{
+    Id = 4,
+    Name = "Roberto",
+    LastName = "Millan",
+    NumeroContrato = 53423121
+};
 
-//Posibilidad de tener un valor null;
-int edad = 10;
-int? edad2 = null;
-
-
-
+Console.WriteLine(Vendedor.MarcarIngreso());
+Console.WriteLine(Reponedor.MarcarIngreso());
+Console.WriteLine(Contratista.MarcarIngreso());
