@@ -2,7 +2,8 @@ using SistemaWeb.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+var connectionString = builder.Configuration
+    .GetConnectionString("DefaultConnection");
 
 
 builder.Services.AddDbContext<AppDbContext>();

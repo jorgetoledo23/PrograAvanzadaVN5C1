@@ -11,12 +11,18 @@ namespace SistemaWeb.Models
 
         [Required]
         public string Apellidos { get; set; }
+
         public string Correo { get; set; }
+
         public string Telefono{ get; set; }
+
         [Required]
         public string Rut{ get; set; }
+
         public string Direccion{ get; set; }
+
         public string Comuna{ get; set; }
+
         public DateTime FechaNacimiento{ get; set; }
 
 
