@@ -1,0 +1,44 @@
+﻿@model IEnumerable<SistemaWeb.Models.Marca>
+
+@{
+    ViewData["Title"] = "Administracion Marcas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Administracion de Marcas</h1>
+
+<p>
+    <a class="btn btn-success" asp-action="CrearMarca"><i class="fa-solid fa-circle-plus me-2"></i>Crear Nueva Marca</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <!-- 
+            <th>
+                @Html.DisplayNameFor(model => model.Imagen)
+            </th> -->
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <!--
+            <td style="width:100px; height:100px;">
+                <img src="~/img/@item.Imagen" class="img-thumbnail" alt="...">
+            </td>-->
+            <td class="text-center">
+                <a asp-action="EditarMarca" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square me-2 text-dark"></i></a>
+                <a asp-action="Details" asp-route-id="@item.Id"><i class="fa-solid fa-circle-info me-2 text-dark"></i></a>
+                <a asp-action="DelMarca" asp-route-id="@item.Id"><i class="fa-solid fa-trash me-2 text-dark"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

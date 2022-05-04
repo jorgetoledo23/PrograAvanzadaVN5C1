@@ -1,0 +1,40 @@
+﻿@model SistemaWeb.Models.Marca
+
+@{
+    ViewData["Title"] = "Editar Marca";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Editando Marca <strong>@Model.Name</strong></h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditarMarca" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+              <label asp-for="Imagen" class="form-label"></label>
+              <input class="form-control" asp-for="ImagenFile">
+              <span asp-validation-for="ImagenFile" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group mt-3">
+                <input type="submit" value="Guardar Cambios" class="btn btn-primary col-12" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-success" asp-action="MarcaIndex">Volver al Listado</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
