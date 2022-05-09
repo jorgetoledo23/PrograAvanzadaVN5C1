@@ -1,0 +1,20 @@
+﻿@model SistemaWeb.Models.Marca
+
+@{
+    ViewData["Title"] = "DetailMarca";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row justify-content-center" style="min-height:300px;">
+    <div class="col-md-4 align-items-center">
+        <img class="img-fluid" src="~/img/@Model.Imagen" width="250px" height="250px" />
+    </div>
+    <div class="col-md-4">
+        <h2 class="text-center">@Model.Name</h2>
+        <hr />
+    </div>
+</div>
+<div class="row">  
+        <a class="d-block" asp-action="EditarMarca" asp-route-id="@Model?.Id">Editar Marca</a>
+        <a class="d-block" asp-action="MarcaIndex">Volver al Listado</a>  
+</div>

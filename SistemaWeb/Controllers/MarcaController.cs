@@ -81,7 +81,7 @@ namespace SistemaWeb.Controllers
             var Marca = _context.Marcas.FirstOrDefault(m =>m.Id == id);
             return View(Marca);
         }
-
+    
         [HttpPost]
         public async Task<IActionResult> DelMarca(Marca Marca)
         {
@@ -90,13 +90,20 @@ namespace SistemaWeb.Controllers
             return RedirectToAction(nameof(MarcaIndex));
         }
 
-
-
-
-
-
-
-
-
+        public async Task<IActionResult> DetailMarca(int id)
+        {
+            var Marca = _context.Marcas.FirstOrDefault(m => m.Id == id);
+            return View(Marca);
         }
+
+
+
+
+
+
+
+
+
+
     }
+}
