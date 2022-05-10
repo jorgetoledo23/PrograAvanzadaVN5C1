@@ -1,0 +1,48 @@
+﻿@model IEnumerable<SistemaWeb.Models.Procesador>
+
+@{
+    ViewData["Title"] = "Administracion de Procesadores";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Administracion de Procesadores</h1>
+
+<p>
+    <a class="btn btn-success" asp-action="CrearProcesador"><i class="fa-solid fa-circle-plus me-2"></i>Crear Nuevo Procesador</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Marca)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Marca)
+            </td>
+            <td class="text-center">
+                <a asp-action="EditarProcesador" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square me-2 text-dark"></i></a>
+                <a asp-action="DetailProcesador" asp-route-id="@item.Id"><i class="fa-solid fa-circle-info me-2 text-dark"></i></a>
+                <a asp-action="DelProcesador" asp-route-id="@item.Id"><i class="fa-solid fa-trash me-2 text-dark"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
