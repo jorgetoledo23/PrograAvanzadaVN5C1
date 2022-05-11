@@ -1,22 +1,18 @@
-﻿@model IEnumerable<SistemaWeb.Models.Clase>
+﻿@model IEnumerable<SistemaWeb.Models.Linea>
 
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-<h1>Administracion de Clases</h1>
+<h1>Administracion de Lineas</h1>
 
 <p>
-    <a class="btn btn-success" asp-action="Create"><i class="fa-solid fa-circle-plus me-2"></i>Crear Nueva Clase</a>
+    <a class="btn btn-success" asp-action="Create"><i class="fa-solid fa-circle-plus me-2"></i>Crear Nueva Linea</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Descripcion)
             </th>
@@ -26,9 +22,6 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Descripcion)
             </td>

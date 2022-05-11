@@ -7,7 +7,7 @@
         public string Descripcion { get; set; }
 
         //Prodpiedad de Navegacion
-        public List<Equipo> Equipos { get; set; }
+        public List<Equipo>? Equipos { get; set; }
 
     }
 }

@@ -1,0 +1,78 @@
+﻿@model IEnumerable<SistemaWeb.Models.Equipo>
+
+@{
+    ViewData["Title"] = "EquipoIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Administracion de Equipos</h1>
+
+<p>
+    <a class="btn btn-success" asp-action="Create"><i class="fa-solid fa-circle-plus me-2"></i>Crear Nuevo Equipo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Descripcion</th>
+            <th>Ram</th>
+            <th>Disco</th>
+            <th>N° Serie</th>
+            <th>N° Modelo</th>
+            <th>Accesorios</th>
+            <th>Fecha Compra</th>
+            <th>Garantia</th>
+            <th>Marca</th>
+            <th>Clase</th>
+            <th>Linea</th>
+            <th>Procesador</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ram)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Disco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NSerie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NModel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Accesorios)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaAdquisicion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Garantia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Marca.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Clase.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Linea.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Procesador.Name)
+            </td>
+            <td class="text-center">
+                <a asp-action="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square me-2 text-dark"></i></a>
+                <a asp-action="Details" asp-route-id="@item.Id"><i class="fa-solid fa-circle-info me-2 text-dark"></i></a>
+                <a asp-action="Delete" asp-route-id="@item.Id"><i class="fa-solid fa-trash me-2 text-dark"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

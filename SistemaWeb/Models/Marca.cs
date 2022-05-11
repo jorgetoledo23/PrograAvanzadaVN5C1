@@ -13,9 +13,9 @@ namespace SistemaWeb.Models
         public string Imagen { get; set; }
 
         [NotMapped]
-        public IFormFile ImagenFile { get; set; }
+        public IFormFile? ImagenFile { get; set; }
 
-        public List<Equipo> Equipos { get; set; }
+        public List<Equipo>? Equipos { get; set; }
 
     }
 }
