@@ -8,9 +8,12 @@
 <h1>Administracion de Marcas</h1>
 
 <p>
-    <a class="btn btn-success" asp-action="CrearMarca"><i class="fa-solid fa-circle-plus me-2"></i>Crear Nueva Marca</a>
+    <a class="btn btn-outline-danger col-12" btn-outline-secondary col-12" btn-success" asp-action="CrearMarca">
+        <i class="fa-solid fa-circle-plus me-2"></i>
+        Crear Nueva Marca
+    </a>
 </p>
-<table class="table">
+<table class="table table-striped">
     <thead>
         <tr>
             <th>
@@ -34,9 +37,9 @@
                 <img src="~/img/@item.Imagen" class="img-thumbnail" alt="...">
             </td>-->
             <td class="text-center">
-                <a asp-action="EditarMarca" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square me-2 text-dark"></i></a>
-                <a asp-action="DetailMarca" asp-route-id="@item.Id"><i class="fa-solid fa-circle-info me-2 text-dark"></i></a>
-                <a asp-action="DelMarca" asp-route-id="@item.Id"><i class="fa-solid fa-trash me-2 text-dark"></i></a>
+                <a asp-action="EditarMarca" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square me-2 "></i></a>
+                <a asp-action="DetailMarca" asp-route-id="@item.Id"><i class="fa-solid fa-circle-info me-2 "></i></a>
+                <a asp-action="DelMarca" asp-route-id="@item.Id"><i class="fa-solid fa-trash me-2 "></i></a>
             </td>
         </tr>
 }

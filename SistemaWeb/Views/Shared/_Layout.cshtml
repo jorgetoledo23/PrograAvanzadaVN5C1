@@ -11,13 +11,13 @@
 </head>
 <body>
     <header>
-        
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light mb-3">
 
             <div class="container">
                 <a class="navbar-brand" href="#">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Godot_icon.svg/2048px-Godot_icon.svg.png" alt="" width="30" height="24" class="d-inline-block align-text-top App-logo">
-                SisPyme
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Godot_icon.svg/2048px-Godot_icon.svg.png" alt="" width="30" height="24" class="d-inline-block align-text-top App-logo">
+                    App
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -25,27 +25,25 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Marca" asp-action="MarcaIndex">Administrar Marcas</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Administracion
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item"  asp-controller="Marca" asp-action="MarcaIndex">Administrar Marcas</a></li>
+                                <li><a class="dropdown-item"  asp-controller="Clase" asp-action="Index">Administrar Clases</a></li>
+                                <li><a class="dropdown-item"  asp-controller="Linea" asp-action="Index">Administrar Lineas</a></li>
+                                <li><a class="dropdown-item"  asp-controller="Procesador" asp-action="ProcesadorIndex">Administrar Procesadores</a></li>
+                                <li><a class="dropdown-item"  asp-controller="Equipo" asp-action="EquipoIndex">Administrar Equipos</a></li>
+                            </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Procesador" asp-action="ProcesadorIndex">Administrar Procesadores</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Clase" asp-action="Index">Administrar Clases</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Linea" asp-action="Index">Administrar Lineas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Equipo" asp-action="EquipoIndex">Administrar Equipos</a>
-                        </li>
+
                     </ul>
                 </div>
             </div>
         </nav>
-        
-        
+
+
     </header>
     <div class="container">
         <main role="main" class="pb-3">

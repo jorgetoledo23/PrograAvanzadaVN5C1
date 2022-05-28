@@ -18,8 +18,9 @@ body {
 }
 
 * {
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Segoe Fluent Icons', sans-serif;
 }
+
 
 @media (prefers-reduced-motion: no-preference) {
     .App-logo {
@@ -36,3 +37,4 @@ body {
         transform: rotate(360deg);
     }
 }
+
