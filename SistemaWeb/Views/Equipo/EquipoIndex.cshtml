@@ -58,33 +58,16 @@
 </table>
 <nav class="row">
   <ul class="pagination justify-content-center">
-        @{
-            if(Model.numPage == 0 || Model.numPage == 1)
-        {
-            <li class="page-item">
-        <a class="page-link" asp-action="EquipoIndex" 
-        asp-route-numPage="@(Model.numPage - 1)" >Previous</a> 
-        }
-        else
-        {
-            
-        }
-
-        
-        
-        <li class="page-item">
-        <a class="page-link" asp-action="EquipoIndex" 
-        asp-route-numPage="@(Model.numPage - 1)" >Previous</a>
-    </li>
+       
     @for (var i = 1; i < Model.cantidadPaginas + 1; i++)
     {
         <li class="page-item"><a class="page-link" asp-action="EquipoIndex"
             asp-route-numPage="@i">@i</a>
             </li>
     }
-    <li class="page-item">
+    @*<li class="page-item">
         <a class="page-link" asp-action="EquipoIndex" 
         asp-route-numPage="@(Model.numPage + 1)">Next</a>
-    </li>
+    </li>*@
   </ul>
 </nav>

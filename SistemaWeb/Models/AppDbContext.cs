@@ -35,6 +35,7 @@ namespace SistemaWeb.Models
         public DbSet<Procesador> Procesadores { get; set; }
         public DbSet<Imagen> Imagenes { get; set; }
         public DbSet<Clase> Clases { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
 
 
 

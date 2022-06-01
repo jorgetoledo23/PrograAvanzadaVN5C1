@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using SistemaWeb.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -5,8 +6,12 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration
     .GetConnectionString("DefaultConnection");
 
-
+//DbContext
 builder.Services.AddDbContext<AppDbContext>();
+
+//Login
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie("Cookies");
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -33,9 +38,11 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+app.UseAuthentication();
+app.UseSession();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Auth}/{action=LoginIn}/{id?}");
 
 app.Run();

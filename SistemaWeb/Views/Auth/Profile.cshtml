@@ -1,0 +1,30 @@
+﻿@model ProfileViewModel
+@{
+    ViewData["Title"] = "Perfil";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 class="mt-3 text-center">Mi Informacion</h3>
+<hr />
+<div class="row m-3 justify-content-center">
+    <div class="col-md-4">
+        <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            <i class="fa-solid fa-image-portrait me-5"></i>
+            @Model.Usuario.Name
+            <hr />
+            <i class="fa-solid fa-user-large me-5"></i>
+            @Model.Usuario.Username
+            <hr />
+            <i class="fa-solid fa-at me-5"></i>
+            @Model.Usuario.Email
+        </li>
+        <li class="list-group-item">
+            <a class="btn btn-outline-danger d-block">Cambiar Password</a>
+        </li>
+        </ul>
+    </div>
+</div>
+
+
+

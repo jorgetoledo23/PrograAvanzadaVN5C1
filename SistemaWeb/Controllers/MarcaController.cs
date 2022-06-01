@@ -1,8 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SistemaWeb.Models;
 
 namespace SistemaWeb.Controllers
 {
+
+    [Authorize(Roles = "Administrador")]
+    [Authorize(Roles = "GestionStock")]
     public class MarcaController : Controller
     {
         private readonly AppDbContext _context;
@@ -76,12 +80,14 @@ namespace SistemaWeb.Controllers
             return RedirectToAction(nameof(MarcaIndex));
         }
 
+        [Authorize(Roles ="Administrador")]
         public async Task<IActionResult> DelMarca(int id)
         {
             var Marca = _context.Marcas.FirstOrDefault(m =>m.Id == id);
             return View(Marca);
         }
-    
+
+        [Authorize(Roles = "Administrador")]
         [HttpPost]
         public async Task<IActionResult> DelMarca(Marca Marca)
         {
