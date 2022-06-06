@@ -8,14 +8,17 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/SistemaWeb.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:500,800" rel="stylesheet">
+
 </head>
-<body>
+<body style="font-family: 'Raleway';">
     <header>
 
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light mb-3">
 
             <div class="container">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" asp-action="Index" asp-controller="Home">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Godot_icon.svg/2048px-Godot_icon.svg.png" alt="" width="30" height="24" class="d-inline-block align-text-top App-logo">
                     App
                 </a>
@@ -49,8 +52,8 @@
                                   @User.Identity.Name.ToUpper()
                               </a>
                               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" asp-controller="User" asp-action="Profile">Perfil</a></li>
-                                <li><a class="dropdown-item" asp-controller="User" asp-action="LogOut">Cerrar Session</a></li>
+                                <li><a class="dropdown-item" asp-controller="Auth" asp-action="Profile">Perfil</a></li>
+                                <li><a class="dropdown-item" asp-controller="Auth" asp-action="LogOut">Cerrar Session</a></li>
                               </ul>
                             </li>
                           </ul>    

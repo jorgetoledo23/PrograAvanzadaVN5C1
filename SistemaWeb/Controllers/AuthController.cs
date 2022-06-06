@@ -81,7 +81,7 @@ namespace SistemaWeb.Controllers
                     await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
                             principal,
                             new AuthenticationProperties { IsPersistent = true });
-                    return RedirectToAction(nameof(Profile));
+                    return RedirectToAction("Index","Home");
                 }
             }
         }
@@ -98,8 +98,19 @@ namespace SistemaWeb.Controllers
 
                 return View(pvm);
             }
-            return View();  
-            //return RedirectToAction(nameof(LoginIn));
+            //return View();  
+            return RedirectToAction(nameof(LoginIn));
+        }
+
+        public async Task<IActionResult> LogOut()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction(nameof(Profile));
+        }
+
+        public IActionResult AccessDenied()
+        {
+            return View();
         }
 
 
