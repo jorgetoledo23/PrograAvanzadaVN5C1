@@ -1,0 +1,42 @@
+﻿@model ICollection<Usuario>
+
+<div class="card text-center">
+    <div class="card-header">
+        Administracion de Usuarios
+    </div>
+    <div class="card-body">
+        <a asp-action="CreateUsuario"
+        class="btn btn-outline-primary"><i class="fa-solid fa-user-plus me-2"></i>Agregar Nuevo Usuario</a>
+    </div>
+</div>
+
+<div class=" row">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Username</th>
+                <th>Rol</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var U in Model)
+            {
+                <tr>
+                    <th>@U.Name</th>
+                    <th>@U.Email</th>
+                    <th>@U.Username</th>
+                    <th>@U.Rol</th>
+                    <th>
+                        <a asp-action="EditarUsuario" asp-route-userid="@U.Id"><i class="fa-solid fa-user-pen"></i></a>
+                        <i class="fa-solid fa-user-large-slash"></i>
+                        <i class="fa-solid fa-user-xmark"></i>
+                    </th>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

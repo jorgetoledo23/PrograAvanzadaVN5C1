@@ -5,7 +5,7 @@ using SistemaWeb.Models;
 namespace SistemaWeb.Controllers
 {
 
-    [Authorize(Roles = "Administrador")]
+    [Authorize(Roles = "SuperAdministrador, Administrador, Gestion Stock")]
     public class MarcaController : Controller
     {
         private readonly AppDbContext _context;

@@ -3,7 +3,7 @@
     bool esAdmin = false;
     foreach (var c in User.Claims)
     {
-        if (c.Value == "Administrador") esAdmin = true;
+        if (c.Value == "Administrador" || c.Value == "SuperAdministrador") esAdmin = true;
     }
 }
 
@@ -14,7 +14,7 @@
             <div class="card p-3">
                 <i class="fa-solid fa-copyright" style="font-size:5rem;"></i>
                 <div class="card-body">
-                    <h5 class="card-title">Administracion de Marcas</h5>
+                    <h5 class="card-title">Gestion Marcas</h5>
                     <p class="card-text">Crea, Edita o Elimina Marcas en el Sistema para la administracion y gestion de Equipos Tecnologicos!</p>
                     <a asp-controller="Marca" asp-action="MarcaIndex"
                        class="btn btn-outline-danger col-12">Ir a la Administracion</a>
@@ -26,7 +26,7 @@
             <div class="card p-3">
                 <i class="fa-solid fa-list" style="font-size:5rem;"></i>
                 <div class="card-body">
-                    <h5 class="card-title">Administracion de Procesadores</h5>
+                    <h5 class="card-title">Gestion Procesadores</h5>
                     <p class="card-text">Crea, Edita o Elimina Procesadores en el Sistema para la administracion y gestion de Equipos Tecnologicos!</p>
                     <a asp-controller="Procesador" asp-action="ProcesadorIndex"
                        class="btn btn-outline-success col-12">Ir a la Administracion</a>
@@ -38,7 +38,7 @@
             <div class="card p-3">
                 <i class="fa-solid fa-users-line" style="font-size:5rem;"></i>
                 <div class="card-body">
-                    <h5 class="card-title">Administracion de Lineas</h5>
+                    <h5 class="card-title">Gestion de Lineas</h5>
                     <p class="card-text">Crea, Edita o Elimina Lineas en el Sistema para la administracion y gestion de Equipos Tecnologicos!</p>
                     <a asp-controller="Linea" asp-action="Index"
                        class="btn btn-outline-primary col-12">Ir a la Administracion</a>
@@ -50,7 +50,7 @@
             <div class="card p-3">
                 <i class="fa-solid fa-users-line" style="font-size:5rem;"></i>
                 <div class="card-body">
-                    <h5 class="card-title">Administracion de Clases</h5>
+                    <h5 class="card-title">Gestion de Clases</h5>
                     <p class="card-text">Crea, Edita o Elimina Clases en el Sistema para la administracion y gestion de Equipos Tecnologicos!</p>
                     <a asp-controller="Clase" asp-action="Index"
                        class="btn btn-outline-primary col-12">Ir a la Administracion</a>
@@ -66,7 +66,7 @@
             <div class="card p-3">
                 <i class="fa-solid fa-laptop" style="font-size:5rem;"></i>
                 <div class="card-body">
-                    <h5 class="card-title">Administracion de Equipos</h5>
+                    <h5 class="card-title">Gestion de Equipos</h5>
                     <p class="card-text">Gestion de Equipos Tecnologicos!</p>
                     <a asp-controller="Equipo" asp-action="EquipoIndex"
                        class="btn btn-outline-info col-12">Ir a la Administracion</a>
@@ -78,12 +78,12 @@
             <div class="card p-3">
                 <i class="fa-solid fa-user-gear" style="font-size:5rem;"></i>
                 <div class="card-body">
-                    <h5 class="card-title">Administracion de Usuarios</h5>
+                    <h5 class="card-title">Gestion de Usuarios</h5>
                     <p class="card-text">Crea, edita o elimina nuevos Usuarios del Sistema</p>
 
                     @if (esAdmin)
                     {
-                        <a asp-controller="Usuarios" asp-action="GestionUsuarios"
+                        <a asp-controller="Usuario" asp-action="GestionUsuarios"
                        class="btn btn-outline-warning col-12">Ir a la Administracion</a>
                     }
                     else

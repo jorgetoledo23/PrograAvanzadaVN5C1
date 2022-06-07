@@ -42,7 +42,7 @@ namespace SistemaWeb.Controllers
                 //Crear al SuperUser
                 U.Name = "admin";
                 U.Email = "admin@dominio.com";
-                U.Rol = "Administrador";
+                U.Rol = "SuperAdministrador";
                 U.Username = "admin";
                 CreatePasswordHash("admin", out byte[] passwordHash, out byte[] passworSalt);
                 U.PasswordHash = passwordHash;

@@ -9,9 +9,15 @@ var connectionString = builder.Configuration
 //DbContext
 builder.Services.AddDbContext<AppDbContext>();
 
-//Login
+//Authentication
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-    .AddCookie("Cookies");
+    .AddCookie("Cookies", options =>
+    {
+        options.LoginPath = "/Auth/LoginIn";
+        options.LogoutPath = "/Auth/Logout";
+        options.AccessDeniedPath = "/Auth/AccessDenied";
+        options.ReturnUrlParameter = "ReturnUrl";
+    });
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
