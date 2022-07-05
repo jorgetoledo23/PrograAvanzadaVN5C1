@@ -3,6 +3,11 @@ using Microsoft.AspNetCore.Mvc;
 using SistemaWeb.Models;
 using System.Security.Cryptography;
 
+using Syncfusion.Pdf;
+using Syncfusion.Pdf.Graphics;
+using Syncfusion.Drawing;
+using System.IO;
+
 namespace SistemaWeb.Controllers
 {
     [Authorize(Roles = "SuperAdministrador")]
@@ -103,18 +108,13 @@ namespace SistemaWeb.Controllers
             return RedirectToAction(nameof(GestionUsuarios));
         }
 
-
-
-
-
-        private void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
+        private static void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
         {
-            using (var hmac = new HMACSHA512())
-            {
-                passwordSalt = hmac.Key;
-                passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
-            }
+            using var hmac = new HMACSHA512();
+            passwordSalt = hmac.Key;
+            passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
         }
+
 
     }
 }
